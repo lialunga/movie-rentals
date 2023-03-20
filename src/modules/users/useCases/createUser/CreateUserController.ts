@@ -1,15 +1,12 @@
 import { Request, Response } from "express";
-import { UsersRepository } from "../../repositories/implementations/UsersRepository";
 import { CreateUserUseCase } from "./CreateUserUseCase";
-
-const usersRepository = new UsersRepository()
-
+import { container } from "tsyringe"
 
 class CreateUserController {
     async handle(req: Request, res: Response){
         const { nome, email, senha } = req.body;
 
-        const createUserUseCase = new CreateUserUseCase(usersRepository);
+        const createUserUseCase = container.resolve(CreateUserUseCase);
 
         const user = await createUserUseCase.execute({ nome, email, senha })
 
