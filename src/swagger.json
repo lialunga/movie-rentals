@@ -1,0 +1,85 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Aluguel de filmes!",
+        "description": "Api dos dados de aluguel de um filme.",
+        "termsOfService": "",
+        "contact": {
+            "email": "passilpaulino@gmail.com"
+        },
+        "version": "1.0.0",
+        "servers": [
+            {
+                "url": "${BASE_URL}",
+                "description": "API de teste"
+            }
+        ]
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "summary": "Cadastro de usuários",
+                "description": "Rota responsável por cadastrar usuários",
+                "tags": [
+                    "users"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$:ref": "#/components/schemas/User"
+                            },
+                            "examples": {
+                                "user": {
+                                    "value": {
+                                        "nome": "Lúcio José",
+                                        "email": "teste@teste.com",
+                                        "senha": "1234"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/User"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro"
+                    },
+                    "404": {
+                        "description": "Não encontrado"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "nome": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "senha": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
