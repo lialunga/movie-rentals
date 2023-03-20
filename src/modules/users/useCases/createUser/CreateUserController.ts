@@ -7,8 +7,7 @@ const usersRepository = new UsersRepository()
 
 class CreateUserController {
     async handle(req: Request, res: Response){
-        const { email, senha } = req.body;
-        const nome = req.body.nome
+        const { nome, email, senha } = req.body;
 
         const createUserUseCase = new CreateUserUseCase(usersRepository);
 
