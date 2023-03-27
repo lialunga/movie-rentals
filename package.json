@@ -5,6 +5,9 @@
   "repository": "https://github.com/plbpassil/movie-rentals.git",
   "author": "plibapassil <passilpaulino@gmail.com>",
   "license": "MIT",
+  "prisma": {
+    "seed": "ts-node-dev prisma/seed.ts"
+  },
   "scripts": {
     "dev": "ts-node-dev src/server.ts"
   },
