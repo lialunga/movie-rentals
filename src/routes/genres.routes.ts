@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { ensureAuthenticated } from "../shared/middlewares/ensureAuthenticated";
 import { ensureAdmin } from "../shared/middlewares/ensureAdmin";
-import { CreateGenreController } from "../modules/genres/useCases/CreateGenreController";
+import { CreateGenreController } from "../modules/genres/useCases/createGenre/CreateGenreController";
 
 
 const genresRoutes = Router()

@@ -23,6 +23,12 @@ class GenresRepository implements IGenresRepository{
 
         return genre as Genre;
     }
+
+    async list(): Promise<Genre[]> {
+        const genres = await prismaClient.genre.findMany();
+
+        return genres;
+    }
 }
 
 export { GenresRepository };

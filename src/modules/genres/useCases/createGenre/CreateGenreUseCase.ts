@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
-import { AppError } from "../../../errors/AppError";
-import { IGenresRepository } from "../repositories.ts/IGenresRepository";
+import { AppError } from "../../../../errors/AppError";
+import { IGenresRepository } from "../../repositories.ts/IGenresRepository";
 
 
 @injectable()
