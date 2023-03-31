@@ -9,7 +9,7 @@
     "seed": "ts-node-dev prisma/seed.ts"
   },
   "scripts": {
-    "dev": "ts-node-dev src/server.ts"
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --no-notify src/server.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

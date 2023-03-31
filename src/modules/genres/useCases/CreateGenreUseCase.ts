@@ -6,7 +6,7 @@ import { IGenresRepository } from "../repositories.ts/IGenresRepository";
 @injectable()
 class CreateGenreUseCase {
     constructor(
-        @inject("GeresRepository")
+        @inject("GenresRepository")
         private genresRepository: IGenresRepository
     ){}
 
