@@ -16,11 +16,32 @@ model User {
   email       String
   senha       String
   isAdmin     Boolean
-  created_at DateTime @default(now())
+  created_at  DateTime @default(now())
+
+  @@map("users")
 }
 
 model Genre {
-  id String @id @default(uuid())
-  name String
-  created_at DateTime @default(now())
+  id          String @id @default(uuid())
+  name        String
+  created_at  DateTime @default(now())
+
+  movies Movie[]
+
+  @@map("genres")
+}
+
+model Movie {
+  id            String @id @default(uuid())
+  name          String
+  description   String
+  daily_rate    Float
+  fine_amount   Float
+  available     Boolean
+  created_at    DateTime @default(now())
+  genre_id      String
+  
+  genre Genre @relation(fields: [genre_id], references: [id])
+
+  @@map("movies")
 }
